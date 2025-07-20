@@ -1,0 +1,12 @@
+name: Daily Weather Email Ping
+
+on:
+  schedule:
+    - cron: '30 5 * * 1-5'  # Runs at 5:30 UTC (6:30 UK local time Mon–Fri)
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl the weather assistant
+        run: curl -sS https://rideornotrepo.onrender.com/run
